@@ -2741,11 +2741,736 @@ To create a new repository in GIT, first we create a directory for the project.
 Then we run ‘git init’ command.
 </b></details>
 
+<details>
+<summary> 17)  What are the different ways to start work in GIT? </ary><br><b>
+  Star work in GIT
+New Project:  To create a new repository we use git init command.
+Existing Project:  To work on an existing repository we use git clone command.
+</b></details>
+
+<details>
+<summary> GIT written in which language?</ary><br><b>
+A:  GIT Language
+Most of the GIT distributions are written in C language with Bourne shell.  Some of the commands are written in Perl language.
+</b></details>
+
+<details>
+<summary>19)  What does ‘git pull’ command in GIT do internally?</ary><br><b>
+A:  Pull command of GIT
+In GIT, git pull internally does a git fetch first and then does a git merge.
+So pull is a combination of two commands that is fetch and merge.
+We use git pull command to bring our local branch up to date with its remote version.
+</b></details>
+
+<details>
+<summary>20)  What does ‘git push’ command in GIT do internally?</ary><br><b>
+A:  Push command of GIT
+   * fetch
+   * merge
+Fetch:  First GIT, copies all the extra commits from server into local repo and move origin/master branch pointer to the end of commit chain.
+Merge:  Then it merges the origin/master branch into the master branch.  Now the master branch pointer moves to the newly created commit.  But the origin/master pointer remains there
+</b></details>
+
+<details>
+<summary> 21)  What is git Stash?</ary><br><b>
+  git stash
+In GIT, sometimes we do not want to commit our code, but we do not want to lose also the unfinished code.  In this case we use git stash command to record the current state of the working directory and index in a stash.
+This stores the unfinished work in a strash, and cleans the current branch from uncommitted changes.
+Now we can work on a clean working directory.
+Later we can use the stash and apply those changes back to our working directory.  At times we are in the middle of some work and do not want to lose the unfinished work, we use git stash command.
+</b></details>
+
+<details>
+<summary> 22)  What is the meaning of ‘stage’ in GIT?</ary><br><b>
+A:  Meaning of ‘stage’ in GIT
+In GIT, stage is a step before commit.  To stage means that the files are ready for commit.
+Let say, you are working on two features in GIT.  One of the features is finished and the other is not yet ready.  You want to commit and leave for home in the evening.
+GIT COMMANDS REFRESHER 3
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+Git status
+This command can shows the status of files in index compared with the working directory.  It lists out the files that are untracked, modified (tracked but not yet updated in the index), and staged (added to the index and ready for commit).
+Eg. 
+git status 
+# On branch master 
+# # Initial commit 
+# # Untracked files: # (use "git add <file>..." to include in what will be committed) 
+# # README nothing added to commit but untracked files present (use "git add" to track)
+git branch
+This command is used to list existing branches.  It will include remote branches if ‘-a’ is passed as parameter.
+It can create a new branch if a branch name is provided.
+Eg. git branch -a * master remotes/origin/master
+git checkout
+When we want to work on a branch, we use git checkout to check out that branch. 
+It switches branch by updating the index, working tree, and HEAD to reflect the chosen branch.                                                                                                                                      Eg. git checkout myNewBranch
+</b></details>
+
+<details>
+<summary>  What is the purpose of git config command?</ary><br><b>
+A:  git config command
+We can set the configuration options for GIT installation by using git config command.
+</b></details>
+
+<details>
+<summary>How can we see the configuration settings of GIT installation?</ary><br><b>
+A:  Configuration settings of GIT
+We can use ‘git config --list’ command to print all the GIT configuration settings in GIT installation.
+</b></details>
+
+<details>
+<summary> how will you write a message with commit command in GIT?</ary><br><b>
+A:  Write a message with commit.
+We call following command for commit with a message:
+$/> git commit –m <message>
+</b></details>
+
+<details>
+<summary>26)  What is stored inside a commit object in GIT?</ary><br><b>
+A:  Inside a commit object.
+   * SHA1 name
+   * Files
+   * Reference
+SHA1 name:  A 40 character string to identify a commit.
+Files:  List of files that represent the state of a project at a specific point of time.
+Reference:  Any reference to parent commit objects.
+</b></details>
+
+<details>
+<summary>27)  How many heads can you create in a GIT repository?</ary><br><b>
+A:  There can be any number of heads in a repository.
+By default there is one head known as HEAD in each repository in GIT.
+</b></details>
+
+<details>
+<summary> 28)  Why do we create branches in GIT?</ary><br><b>
+A:  If we are simultaneously working on multiple tasks, projects, defects or features, we need multiple branches.  In GIT, we can create a separate branch for each separate purpose.
+Let say we are working on a feature, we create a feature branch for that.  In between we get a defect to work on then we create another branch for defect to work on then we create another branch for defect and work on it.  Once the defect work is done, we merge that branch and come back to work on feature branch again.
+</b></details>
+
+<details>
+<summary> What are the different kinds of branches that can be created in GIT?</ary><br><b>
+A:  Different kinds of branches in GIT
+Feature branches:  These are used for developing a feature.
+Release branches:  These are used for releasing code to production.
+Hotfix branches:  These are used for releasing a hotfix to production for a defect or emergency fix.
+</b></details>
+
+<details>
+<summary>30)  How will you create a new branch in GIT?</ary><br><b>
+A:  Create a new branch
+We use following command to create a new branch in GIT:
+$/> git checkout –b <branchname>
+</b></details>
+
+<details>
+<summary>31)  How will you add a new feature to the main branch?</ary><br><b>
+A:  Add a new feature to the main
+We do the development work on a feature branch that is created from master branch.  Once the development work is ready we use git merge command to merge it into master branch.
+</b></details>
+
+<details>
+<summary>32)  What is a pull request in GIT?</ary><br><b>
+A:  Pull request in GIT
+A pull request in GIT is the list of changes that have been pushed to GIT repository.  Generally these changes are pushed in a feature branch or hotfix branch.
+After pushing these changes we create a pull request that contains the changes between master and our feature branch.  This pull request is sent to reviewers for reviewing the code and then merging it into develop or release branch.
+</b></details>
+
+<details>
+<summary> 33)  What is merge conflict in GIT?</ary><br><b>
+A:  A merge conflict in GIT is the result of merging two commits.  Sometimes the commit to be merged and current commit have changes in same location.
+In this scenario, GIT is not able to decide which change is more important.  Due to this GIT reports a merge conflict.  It means merge is not successful.  We may have to manually check and resolve the merge conflict.
 
 
+GIT COMMANDS REFRESHER 4
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview.  Test yourself on which GIT commands you already know about.
+git merge
+This command merges one or more branches into current branch.  It automatically creates a new commit if there is no merge conflict.
+Eg. git merge myNewBranch
+git reset
+We use this command to reset the index and working directory to the state of last commit.
+Eg. git reset --hard HEAD
+git stash
+Temporarily saves changes that you don’t want to commit immediately.  You can apply the changes later.
+</b></details>
+
+<details>
+<summary>34)  How can we resolve a merge conflict in GIT?</ary><br><b>
+A:  Resolve a merge conflict.
+To resolve the merge conflict in a file, we edit the file and fix the conflicting change.
+To resolve the merge conflict in a file, we edit the file and fix the conflicting change. In above example we can either keep five or six.
+After editing the file we rungit add command followed by git commit command.  Since GIT is aware that it was merge conflict, it links this change to the correct commit.
+</b></details>
+
+<details>
+<summary>35)  What command will you use to delete a branch? </ary><br><b>
+A:  Delete a branch
+git branch –d <branchname?
+</b></details>
+
+<details>
+<summary>36)  What command will you use to delete a branch that has unmerged changes? </ary><br><b>
+A:  Delete branch with unmerged changes.
+Git branch –D <branchname>
+</b></details>
+
+<details>
+<summary> 37)  What is the alternative command to merging in GIT?</ary><br><b>
+A:  Alternative to merging
+Another alternative of merging in GIT is rebasing.  It is done by git rebase command.
+</b></details>
+
+<details>
+<summary>38)  What is Rebasing in GIT?</ary><br><b>
+A:  Rebasing in GIT.
+Rebasing is the process of moving a branch to a new base commit.
+It is like rewriting the history of a branch.
+In Rebasing, we move a branch from one commit to another.
+By this we can maintain linear project history.
+Once the commits are pushed to a public repository, it is not a good practice to use Rebasing.
+</b></details>
+
+<details>
+<summary> 39)  What is the ‘Golden Rule of Rebasing’ in GIT? </ary><br><b>
+A:  Golden Rule of Rebasing.
+The golden rule of Rebasing is that we should never use git rebase on public branches.  If other people are using the same branch then they may get confused by looking at the changes in Master branch after GIT rebasing.
+</b></details>
+
+<details>
+<summary>  Why do we use Interactive Rebasing in place of Auto Rebasing?</ary><br><b>
+A:  Interactive Rebasing.
+By using Interactive rebasing we can alter the commits before moving them to a new branch.
+This is more powerful than an automated rebase.
+It gives us complete control over the branch’s commit history.
+</b></details>
+
+<details>
+<summary> 41)  What is the command for Rebasing in Git?</ary><br><b>
+A:  Command for Rebasing
+Git command for rebasing is:
+Git rebase <new-commit>
+</b></details>
+
+<details>
+<summary> What is the main difference between git clone and git remote? </ary><br><b>
+A:  git clone vs. git remote
+The main difference between git clone and git remote is that git is used to create a new local repository whereas git remote is used in an existing repository.
+git remote adds a new reference to existing remote repository for tracking further changes.
+Git clone creates a new local repository by copying another repository from a URL.
+</b></details>
+
+<details>
+<summary> 43)  What is GIT version control?</ary><br><b>
+A:  GIT version control helps us in managing the changes to source code over time by a software team.  It keeps track of all the changes in a special king of database.  If we make a mistake, we can go back in time and see previous changes to fix the mistake.
+GIT version control helps the team in collaborating on developing a software and work efficiently.  Everyone can merge the changes with confidence that everything is tracked and remains intact in GIT version control.  Any bug introduced by a change can be discovered and reverted back by going back to a working version.
+</b></details>
+
+<details>
+<summary> What GUI do you use of working on GIT?</ary><br><b>
+A:  GUI for GIT
+* GitHub Desktop.
+* GITX-dev.
+* Gitbox.
+* Git-cola.
+* Source Tree.
+* Git Extentions.
+* SmartGit.
+</b></details>
+
+<details>
+<summary>45)  What is the use of git diff command in GIT?</ary><br><b>
+A:  In GIT, git diff command is used to display the differences between 2 versions, or the differences between 2 versions, or between working directory and an index, or between index and most recent commit.
+It can also display changes between two blob objects, or between two files on disk in GIT.
+It helps in finding the changes that can be used for code review for a feature or bug fix.
+GIT COMMANDS REFRESHER 5
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+git tag
+We use this command to tag a specific commit with a simple, human readable handle that will never move.
+Eg. git tag -a v5.0 -m 'version 5.0 tag'
+git fetch
+Use this command to fetch all the objects from remote repository that are not present in local repository.
+Eg. git fetch origin
+git pull
+This command fetches the files from remote repository and merges it with local repository. This command is equal to git fetch and git merge sequence.
+Eg. git pull origin
+git push
+We use it to push all the modified local objects to remote repository and advance the branch.
+Eg. git push origin master
+</b></details>
+  
+<details>
+<summary> 46)  What is git rerere? </ary><br><b>
+A:  git rerere
+In GIT, rerere is a hidden feature.  The full form of rerere is “reuse recorded resolution”.
+By using rerere, GIT remembers how we’ve resolved a hunk conflict.  The next time GIT sees the same conflict, it can automatically resolve it for us.
+In GIT, rerere is a hidden feature.  The full form of rerere is “reuse recorded resolution”.
+47)  What are the three most popular version of git diff command?
+A:  Popular version of git diff is.
+* git diff
+* git diff –cached
+* git diff HEAD
+git diff:  It displays the differences between working directory and the index.
+git diff –cached : It displays the differences between the index and the most recent commit.
+Git diff HEAD:  It displays the differences between working directory and the most recent commit.
+</b></details>
+
+<details>
+<summary>48)  What is the use of git status command?</ary><br><b>
+A:  git status command
+The paths that have differences between the index file and the current HEAD commit.
+The paths that have differences between the working tree and the index file.
+The paths in the working tree that are not tracked by GIT.
+Among the above three items, first item is the one that we commit by using git commit command.  Item two and three can be committed only after running git add command.
+</b></details>
+
+<details>
+<summary>  What is the main differemce between git diff and git status?</ary><br><b>
+A:  git diff  vs.  git status
+In GIT, git diff shows the differences between commits or between the working directory and index.
+Whereas, git status command just shows the current status of working tree.
+</b></details>
+
+<details>
+<summary>What is the use of git rm command in GIT?</ary><br><b>
+A:  git rm command
+In GIT, git rm command is used for removing a file from the working tree and the index.
+We use git rm –r to recursively remove all files from a leading directory.
+</b></details>
+
+<details>
+<summary>What is the command to apply a stash?</ary><br><b>
+A:  Command to apply a stash
+Sometimes we want to save our unfurnished work.  For this purpose we use git stash command.  Once we want to come back and continue working from the last place where we left, we use git stash apply command to bring back the unfinished work.
+So the command to apply a stash is:
+git stash apply or we can use:
+git stash apply <stashname>
+</b></details>
+
+<details>
+<summary>Why do we use git log command?
+A:  git log command
+We use git log command to search for specific commits in project history.
+We can search git history by author, date or content.  It can even list the commits that were done x days before or after a specific date.
+</b></details>
+
+<details>
+<summary> Why do we need git add command in GIT?</ary><br><b>
+A:  git add command
+GIT gives us a very good feature of staging our changes before commit.  To stage the changes we use git add command.  This adds our changes from working directory to the index.
+When we are working on multiples tasks and we want to just commit the finished tasks, we first add finished changes to staging area and then commit it.  At this time git add command is very helpful.
+</b></details>
+
+<details>
+<summary>Why do we use git reset command?</ary><br><b>
+A:  git reset command
+We use git reset command to reset current HEAD to a specific state.  By default it reverses the action of git add command.
+So we use git reset command to undo the changes of git add command.
+</b></details>
+
+<details>
+<summary>How can we convert git log messages to a different format?</ary><br><b>
+A:  We can use pretty option in git log command for this.
+Git log –pretty
+This option converts the output format from default to other formats.  There are pre-built formats available for our use.
+Git log –pretty=oneline
+E.g. git log --pretty=format:”%h  - %an, %ar : %s”
+bc71a6c – Smith John, 3 years ago : changed the version number
+</b></details>
+
+<details>
+<summary>What are the programming languages in which git hooks can be written?</ary><br><b>
+A:  programming languages for git hooks
+* Perl.
+* Shell script.
+* Python.
+* Other languages.
+</b></details>
+
+<details>
+<summary>What is a commit message in GIT?</ary><br><b>
+A:  commit message in GIT
+A commit message is a comment that we add to a commit.
+We can provide meaningful information about the reason for commit by using a commit message.
+In most of the organizations, it is mandatory to put a commit message along with each commit.
+Often, commit messages contain JIRA ticket, bug id, defect id etc. for a project.
+GIT COMMANDS REFRESHER 6
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+git remote
+It will show all the remote versions of repository.
+Eg. git remote origin
+git log
+It is used to show a listing of commits on a branch with corresponding details.
+git show
+This command shows information about a git object.
+</b></details>
+
+<details>
+<summary>>How GIT protects the code in a repository?</ary><br><b>
+A:  GIT is made very secure since it contains the source code of an organization.  All the objects in a GIT repository are encrypted with a hashing algorithm called SHA1.
+This algorithm is quite strong and fast.  It protects source code and other contents of repository against the possible malicious attacks.
+This algorithm also maintains the integrity of GIT repository by protecting the change history against accidental changes.
+</b></details>
+
+<details>
+<summary>How GIT provides flexibility in version control?</ary><br><b>
+A:  How GIT provides flexibility 
+GIT is very flexible version control system.  It supports non-linear development workflows.  It supports flows that are compatible with external protocols and existing systems.
+GIT also supports both branching and tagging that promotes multiple kinds of workflows in version control.
+</b></details>
+
+<details>
+<summary>How can we change a commit message in GIT?</ary><br><b>
+A:  If a commit has not been pushed to GitHub, we can use git commit --ammend command to change the commit message.
+When we push the commit, a new message appears on GitHub.
+</b></details>
+
+<details>
+<summary>Why is it advisable to create an additional commit instead of amending an existing commit?</ary><br><b>
+A:  Additional commit vs. amend
+Git amend internally creates a new commit and replaces the old commit.  If commits have already been pushed to central repository, it should not be used to modify the previous commits.
+</b></details>
+
+<details>
+<summary> How will you delete a branch in GIT?</ary><br><b>
+A:  Delete a branch 
+We use git branch –d <branchname> command to delete a branch in GIT.
+In case a local branch is not fully merged, but we want to delete it by force, then we use git branch –D <branchname> command.
+</b></details>
+
+<details>
+<summary> What is a bare repository in GIT?</ary><br><b>
+A:  Bare repository in GIT
+A repository created with git init –bare command is a bare repository in GIT.
+The bare repository does not contain any working or checked out copy of source files.  A bare repository stores git revision history in the root folder of repository instead of in a .git subfolder.
+It is mainly used for sharing and collaborating with other developers.
+We can create a bare repository in which all developers can push their code.
+There is no working tree in bare repository, since no one directly edits files in a bare repository.
+</b></details>
+
+<details>
+<summary>How do we put a local repository on GitHub server?</ary><br><b>
+A:  Put a local repository on GitHub
+To put a local repository on GitHub, we first add all the files of working directory into local repository and commit the changes.  After that we call git remote add <Remote Repo URL> command to add the local repository on GitHub server.
+Once it is added, we use git push command to push the contents of local repository to remote GitHub server.
+</b></details>
+
+<details>
+<summary> How can we set up a Git repository to run code sanity checks and UAT tests just before a commit ?</ary><br><b>
+A:  Run checks before commit
+We can use git hooks for this kind of purpose.  We can write the code sanity checks in script.  This script can be called by pre-commit hook of the repository.
+</b></details>
+
+<details>
+<summary> How can we revert a commit that was pushed earlier and it public now?</ary><br><b>
+A:  We can use git revert command for this purpose.
+Internally, git revert command creates a new commit with patches that reverse the changes done in previous commits.
+The other optionis to checkout a previous commit version and then commit it as a new commit.
+</b></details>
+
+<details>
+<summary>In GIT, how will you compress last n commits into a single commit?</ary><br><b>
+A:  Compress last n commits
+To compress last n commits a single commit, we use git rebase command.  This command compresses multiple commits and creates a new commit.  It overwrites the history of commits.
+</b></details>
+
+<details>
+<summary> How will you switch from one branch to a new branch in GIT?</ary><br><b>
+A:  Switch branch in GIT
+In GIT, we can use:
+Git checkout <new branchname>
+Command to switch to a new branch.
+</b></details>
+
+<details>
+<summary> How can we clean unwanted files from our working directory in GIT?</ary><br><b>
+A:  GIT provides git clean command to recursiverly clean the working tree.  It removes the files that are not under version control in GIT.
+If we use git clean –x, then ignored files are also removed.
+GIT COMMANDS REFRESHER 7
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+git ls-tree
+We use this command to show a tree object.  It includes mode and name of each item and SHA-1 value of blob or tree that it points to.
+Eg. git ls-tree master^{tree} 100644 blob 6dd2c056e96b40d8a69df110062f5b2473d74eba HELLO
+git cat-file
+This command is used to view the type of an object through SHA-1 value.
+Eg. git cat-file -t 6dd2c056e96b40d8a69df110062f5b2473d74eba blob
+git grep
+We use this command to search through trees of content for words and phrases. 
+Eg. git grep "www.github.com" -- *.java
+</b></details>
+
+<details>
+<summary>  What is the purpose of git tag command?</ary><br><b>
+A:  git tag command
+We use git tag command to add, delete, list or verify a tag object in GIT.
+Tag objects created with options –a, -s, -u are also known as annotated tags.
+Annotated tags are generally used for release.
+</b></details>
+
+<details>
+<summary>What is cherry-pick in GIT?</ary><br><b>
+A:  A git cherry-pick is a very useful feature in GIT.
+By using this command we can selectively apply the changes done by existing commits.
+In case we want to selectively release a feature, we can remove the unwanted files and apply only selected commits.
+</b></details>
+
+<details>
+<summary>What is shortlog in GIT?</ary><br><b>
+A:  A shortlog in GIT is a command that summarizes the git log output.
+The output of git shortlog is in a format suitable for release announcements.
+</b></details>
+
+<details>
+<summary>How can you find the names of files that were changed in a specific commit?</ary><br><b>
+A:  Find names of files in commit
+Every commit in GIT has a hash code.  This hash code uniquely represents the GIT commit object.
+We can use git diff-tree command to list the name of files that were changed in a commit.
+The command will be as follows:
+git diff-tree –r <hash of commit>
+By using –r flag, we just get the list of individual files.
+</b></details>
+
+<details>
+<summary>How can we attach an automated script to run on the event of a new commit by push command?</ary><br><b>
+A:  Attach an automated script.
+In GIT we can use a hook to run an automated script on a specific event.  We can choose between pre-receive, update or post-receive hook and attach our script on any of these hooks.
+GIT will automatically run the script on the event of any of these hooks.
+</b></details>
+
+<details>
+<summary> What is the difference between pre-receive, update and post-receive hooks in GIT?</ary><br><b>
+A:  pre-receive hooks
+Pre-receive hook is invoked when a commit is pushed to a destination repository.  Any script attached to this hooks is executed before updating any reference.  This is mainly used to enforce development best practices and policies.        
+Update hooks
+Update hook is similar to pre-receive hook.  It is triggered just before any updates are done.  This hook is invoked once for every commit that is pushed to a destination repository.
+post-receive hooks
+Post-receive hook is invoked after the updates have been done and accepted by a destination repository.  This is mainly used to configure deployment scripts.  It can also invoke Continuous Integration (CI) systems and send notification emails to relevant parties of a repository.
+</b></details>
+
+<details>
+<summary> Do we have to store scripts for GIT hooks within same repository?</ary><br><b>
+A:  Store scripts for GIT hooks
+A hook is local to a GIT repository.  But the script attached to a hook can be created either inside the hooks directory or it can be stored in a separate repository.  But we have to link the script to a hook in our local repository.
+In this way we can maintain versions of a script in a separate repository, but use them in our repository where hooks are stored.
+Also when we store scripts in a separate common repository,  we can reuse same scripts for different purposes in multiple repositories.
+</b></details>
+
+<details>
+<summary>How can we determine the commit that is the source of a bug in GIT?</ary><br><b>
+A:  Determine the commit
+In GIT we can use git bisect command to find the commit that has introduced a bug in the system.
+GIT bisect command internally uses binary search algorithm to find the commit that introduced a bug.
+We first tell a bad commit that contains the bug and a good commit that was present before the bug was introduced.
+Then git bisect picks a commit between those two endpoints and asks us whether the selected commit is good or bad.
+It continues to narrow down the range until it discovers the exact commit responsible for introducing the bug.
+</b></details>
+
+<details>
+<summary> How can we see differences between two commits in GIT ?</ary><br><b>
+A:  See differences between two commits
+We can use git diff command to see the differences between two commits.  The syntax for a simple git diff command to compare two commits is:
+git diff <commit#1><commit#2>
+</b></details>
+
+<details>
+<summary> What are the different ways to identify a commit in GIT ?</ary><br><b>
+A:  Different ways to identify a commit
+Each commit object in GIT has a unique hash.  This hash is a 40 characters checksum hash.
+It is base on SHA1 hashing algorithm.  We can use a hash to uniquely identify a GIT commit.
+GIT also provides support for creating an alias for a commit.  This alias is known as refs.  Every tag in GIT is a ref.  These refs can also be used to identify a commit.  Some of the special tags in GIT are HEAD, FETCH_HEAD and MERGE_HEAD.
+</b></details>
+
+<details>
+<summary> When we run git branch <branchname>, how does GIT know the SHA-1 of the last commit?</ary><br><b>
+A:  How does GIT know SHA-1
+GIT uses the reference named HEAD for this purpose.  The HEAD file in GIT is a symbolic reference to the current branch we are working on.
+A symbolic reference is not a normal reference that contains a SHA-1 value.
+A symbolic reference contains a pointer to another reference.
+When we open head file we see:
+$ cat .git/HEAD
+ref: refs/heads/master
+If we run git checkout branchA, Git updates the file to look like this:
+$ cat .git/HEAD
+ref: refs/heads/branchA
+</b></details>
+
+<details>
+<summary>What are the different types of Tags you can create in GIT ?</ary><br><b>
+A:  Types of Tags
+* Lightweight Tag
+* Annotated Tag
+Lightweight Tag:  A lightweight tag is a reference that never moves.  We can make a light weight tag by running a command similar to following:
+$ git update-ref refs/tags/v1.0                                                                                                             dad0dab538c970e37ea1e769cbbde608743bc96d
+Annotated Tag : An annotated tag is more complex object in GIT.  When we create an annotated tag, GIT creates a tag object and writes a reference to point to it rather than directly to the commit.  We can create an annotated tag as follows :
+$ git tag –a v1.1                                                                                                                          1d410eabc13591cb07496601ebc7c059dd55bfe9 –m ‘test tag’82) 
+
+<details>
+<summary>How can we rename a remote repository?</ary><br><b>
+A:  Rename a remote repository
+We can use command git remote rename for changing the name of a remote repository.  This changes the short name associated with a remote repository in your local.
+Command would look as follows:
+%> git remote rename repoOldName repoNewName
+GIT COMMANDS REFRESHER 8
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+git diff
+Use this command to generate patch files or statistics of differences between paths or files in a git repository, or an index or the working directory.
+Eg. git diff
+gitk
+This is a graphical Tcl/Tk based interface for local Git repository.
+Eg. gitk
+git instaweb
+We can use it to run a web server with an interface in our local repository and automatically direct a web browser to it.
+Eg. 
+git instaweb --httpd=webrick 
+git instaweb --stop
+</b></details>
+
+<details>
+<summary> Some people use git checkout and some use git co for checkout.  How is that possible?</ary><br><b>
+A:  git co for checkout
+Can create aliases in GIT for commands by modifying the git configuration.
+In case of calling git co instead of git checkout we can run following command:
+git config --global alias.co checkout
+</b></details>
+
+<details>
+<summary> How can we see the last commit on each of our branch in GIT?</ary><br><b>
+A:  When we run git branch command, it lists all the branches in our local repository.  To see the latest commit associated with each branch,  we use option –v.
+Exact command for this is as follows:
+git branch –v
+It lists branches as:
+Issue72 82b676c fix issue                                                                                                             *master 7a97605 Merge branch ‘issue72’                                                                                testing 931ac34 add joe to developer list
 
 
+</b></details>
 
+<details>
+<summary> Is origin a special branch in GIT?</ary><br><b>
+A:  Is origin a special branch
+No, origin is not a special branch in GIT.
+Branch origin is similar to branch master.  It does not have any special meaning in GIT.
+Master is the default name for a starting branch when we run git init command.
+Origin is the default name for a remote when we run git clone command.  If we run git clone –o myOrigin instead, then we will have myOrigin/master as out default remote branch.
+</b></details>
+
+<details>
+<summary>How can we configure GIT to not ask for password every time?</ary><br><b>
+A:  When we use HTTPS URL to push, the GIT server asks for username and password for authentication.  It prompts us on the terminal for this information.
+If we don’t want to type username/password with every single time push, we can set up a “credential cache”.
+It is kept in memory for a few minutes.
+We can set it by running:
+git config --global credential.helper cache
+</b></details>
+
+<details>
+<summary> What are the four major protocols used by GIT for data transfer?</ary><br><b>
+A:  Four major porotcols used by GIT
+* Local.
+* HTTP.
+* Secure Shell (SSH).
+* Git.
+</b></details>
+
+<details>
+<summary> What is GIT protocol?</ary><br><b>
+A:  Git protocol is a mechanism for transferring data in GIT.  It is a special daemon.  It comes pre-packaged with GIT.  It listens on a dedicated port 9418.  It provides services similar to SSH protocol.
+But Git protocol does not support any authentication.
+So on plus side, this is a very fast network transfer protocol.  But it lacks authentication.
+</b></details>
+
+<details>
+<summary> How can we work on a project where we do not have push access?</ary><br><b>
+A:  In case of projects where we do not have push access, we can just fork the repository.
+By running git fork command, GIT will create a personal copy of the repository in our namespace.  Once our work is done, we can create a pull request to merge our changes on the real project.
+</b></details>
+
+<details>
+<summary> What is git grep?</ary><br><b>
+A:  GIT is shipped along with a grep command that allows us to search for a string or regular expression in any committed tree or the working directory.
+By default, it works on the files in your current working directory.
+</b></details>
+
+<details>
+<summary> How can your recorder commits in GIT?</ary><br><b>
+A:  Recorder commits in GIT
+We can use git rebase command to reorder commits in GIT.  It can work interactively and you can also select the ordering of commits.
+</b></details>
+
+<details>
+<summary>  How will you split a commit into multiple commits?</ary><br><b>
+A:  To split a commit, we have to use git rebase command in interactive mode.  Once we reach the commit that needs to be split, we reset that commit and take the changes that have been reset.  Now we can create multiple commits our of that.
+</b></details>
+
+<details>
+<summary> What is filter-branch in GIT?</ary><br><b>
+A:  In GIT, filter-branch is another option to rewrite history.  It can scrub the entire history.  When we have large number of commits, we can use this tool.
+It gives many options like removing the commit related changes to a specific file from history.  You can even set your name and email in the commit history by using filter-branch.
+</b></details>
+
+<details>
+<summary> What are the three main trees maintained by GIT?</ary><br><b>
+A:  Three main trees maintained by GIT.
+HEAD:  This is the last commit snapshot.
+Index:  This is the proposed next commit snapshot.
+Working Directory:  This is the sandbox for doing changes.
+</b></details>
+
+<details>
+<summary> What are the three main steps of working in GIT?</ary><br><b>
+A:  Checkout the project from HEAD to Working Directory.
+Stage the files from Working Directory to Index.
+Commit the changes form Index to HEAD.
+GIT COMMANDS REFRESHER 9
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview. Test yourself on which GIT commands you already know about.
+git archive
+Use this command to create a tar or zip file including the contents of a single tree from local repository. 
+Eg. git archive --format=zip master^ HELLO >filename.zip
+git gc
+We can use this command to do garbage collection for repository. It cleans unnecessary files. It optimizes the repository. It should be run occasionally.
+Eg. git gc Counting objects: 10, done. Delta compression using up to 4 threads. Compressing objects: 100% (10/10), done. Writing objects: 100% (10/10), done. Total 10 (delta 1), reused 0 (delta 0)
+git fsck
+This command performs an integrity check of the Git file system, identifying corrupted objects.
+Eg. git fsck
+git prune
+This command is used to remove objects that are no longer pointed to by any object in any reachable branch.
+Eg. git prune
+</b></details>
+
+<details>
+<summary> What are ours and theirs merge options in GIT?</ary><br><b>
+A:  In GIT, we get two simple options for resolving merge conflicts:  ours and theirs 
+These options tell the GIT which side to favor in merge conflicts.
+In ours, we run a command like git merge –Xours branchA
+As the name suggests, in ours, the changes in our branch are favored over the other branch during a merge conflict.
+</b></details>
+
+<details>
+<summary> How can we ignore merge conflicts due to whitespace?</ary><br><b>
+A:  Ignore merge conflicts due to whitespace
+GIT provides an option ignore-space-change in git merge command to ignore the conflicts related to whitespaces.
+The command to do so is as follows:
+Git merge –Xignore-space-change   
+
+
+<                                                                                    whitespace
+</b></details>
+
+<details>
+<summary>What is git blame?</ary><br><b>
+A:  In Git,  git blame is a very good option to find the person who changed a specific line.  When we call git blame on a file, It displays the commit and name of a person responsible for making change in that line.
+</b></details>
+
+<details>
+<summary> What is a submodule in GIT ?</ary><br><b>
+A:  submodule in GIT
+In GIT, we can create sub modules inside a repository by using git submodule command.
+By using submodule command, we can keep a Git repository as a subdirectory of another Git repository.
+It allows us to keep our commits to submodule separate from the commits to main Git repository
+</b></details>
 
 
 <a name="git-advanced"></a>
