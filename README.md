@@ -2575,9 +2575,16 @@ git checkout HEAD~1 -- /path/of/the/file
   </b></details>
   
  <details>
-<summary> What is SubGit?</summary><br><b>
+<summary> What is SubGitsumm?</ary><br><b>
  SubGit is software tool used for migrating SVN to Git.  It is very easy to use.  By using this we can create a writable Git mirror of a subversion repository
 </b></details>
+
+ <details>
+ <summary> How can we see most recent commits in GIT??</ary><br><b>
+</b></details>
+
+
+
 
 <a name="git-advanced"></a>
 #### :star: Advanced
