@@ -2579,8 +2579,33 @@ git checkout HEAD~1 -- /path/of/the/file
  SubGit is software tool used for migrating SVN to Git.  It is very easy to use.  By using this we can create a writable Git mirror of a subversion repository
 </b></details>
 
+<details>
+<summary>  How can we know if a branch is already merged into master in GIT?
+  If a branch is already merged into master, we can use following commands 
+  git branch --merged master.  This prints the branches merged into master
+  git branch --merged lists.  This prints the branched merged into HEAD (i.e. tip of current branch)
+  git branch --no-merged.  This prints the branches that have not been merged
+  We can use -a flag to show both local and remote branches or we can use -r flag to show only the remote branches.
+</b></details>
+  
+<details>
+<summary> What is the purpose of git stash drop?
+A:  In case we do not need a specific stash, we use git stash drop command to remove it from the list of stashes.
+By default, this command removes the latest added stash.
+To remove a specific stash we specify as argument in the git stash drop
+<stashname> command.
+</b></details>
+
+
+
+</b></details>
+
+
+
+
  <details>
  <summary> How can we see most recent commits in GIT??</ary><br><b>
+   We can use git log command to see the latest commits.  To see the three most recent commits, we use following command git log -3
 </b></details>
 
 
