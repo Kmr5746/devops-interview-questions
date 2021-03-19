@@ -2571,6 +2571,9 @@ git checkout HEAD~1 -- /path/of/the/file
 
   * Not waiting to long between commits
   * Not removing the .git directory :)
+  
+<summary> What is SubGit?</summary><br><b>
+ SubGit is software tool used for migrating SVN to Git.  It is very easy to use.  By using this we can create a writable Git mirror of a subversion repository
 </b></details>
 
 <a name="git-advanced"></a>
@@ -2590,6 +2593,7 @@ This is a great article about Octopus merge: http://www.freblogg.com/2016/12/git
 ## Go
 
 <a name="go-beginner"></a>
+
 #### :baby: Beginner
 
 <details>
