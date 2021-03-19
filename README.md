@@ -2580,7 +2580,7 @@ git checkout HEAD~1 -- /path/of/the/file
 </b></details>
 
 <details>
-<summary>  How can we know if a branch is already merged into master in GIT?
+<summary>  How can we know if a branch is already merged into master in GIT??</ary><br><b>
   If a branch is already merged into master, we can use following commands 
   git branch --merged master.  This prints the branches merged into master
   git branch --merged lists.  This prints the branched merged into HEAD (i.e. tip of current branch)
@@ -2589,24 +2589,161 @@ git checkout HEAD~1 -- /path/of/the/file
 </b></details>
   
 <details>
-<summary> What is the purpose of git stash drop?
+<summary> What is the purpose of git stash drop????</ary><br><b>
 A:  In case we do not need a specific stash, we use git stash drop command to remove it from the list of stashes.
 By default, this command removes the latest added stash.
 To remove a specific stash we specify as argument in the git stash drop
 <stashname> command.
 </b></details>
 
-
-
+<details>
+<summary>   What is the HEAD in GIT? </ary><br><b>
+A:  HEAD is a reference to the currently checked out commit.  It is a symbolic reference to the branch that we have checked out.  At any given time, one head is selected as the ‘current hear’.  This head is also known as HEAD (always in uppercase).
 </b></details>
 
+<details>
+<summary>   What is the most popular branching strategy in GIT? <ary><br><b>
+A:  There are many ways to do branching in GIT.  One of the popular ways is to maintain two branches.
+Master:  This branch is used for production.  In this branch HEAD is always in production ready state.
+Develop:  This branch is used for development.  In this branch, we store the latest code developed in project.  This is work in progress code.
+GIT COMMANDS REFRESHER 1
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT Interview.  Test yourself on which GIT commands you already know about.
+git init
+Use it to initialize a git repository.  It will create initial ‘.git’ directory in a new or in an existing project.
+Eg. cd /Users/user/new git folder/ git init
+git config
+You can use it to set configuration values for your username, email address, key or preferred diff algorithm, file formats etc.
+Eg.git config --global user.name "JohnDoe"
+git config --global user.email "john@doe.com"
+cat ~/.gitconfig [user] name = JohnDoe email = john@doe.com
+git clone
+We can make a copy of Git repository from a remote GIT source.  It adds the original location as a remote, so we can fetch from it again and push to it if we have permissions.
+Eg. git clone git@github.com:user/john.git
+</b></details>
 
-
+<details>
+<summary> 6)  What is SubGit? </ary><br><b>
+A:  SubGit is software tool used for migrating SVN to Git.  It is very easy to use.  By using this we can create a writable Git mirror of a subversion repository
+It creates a bi-directional mirror that can be used for pushing to Git as well as committing to Subversion.
+SubGit also takes care of synchronization between Git and Subversion.
+</b></details>
 
  <details>
  <summary> How can we see most recent commits in GIT??</ary><br><b>
    We can use git log command to see the latest commits.  To see the three most recent commits, we use following command git log -3
 </b></details>
+
+<details>
+<summary> 7)  What is the use of git instaweb?</ary><br><b>
+A:  Git-instaweb is a script by which we can browse a git repository in a web browser.
+It sets up the gitweb and a web-server that makes the working repository available online.
+</b></details>
+
+<details>
+<summary> What are git hooks? </ary><br><b>
+A:  Git hooks are scripts that can run automatically on the occurrence of an event in a Git repository.
+These are used for automation of workflow in GIT.
+Git hooks also help in customizing the internal behavior of GIT.
+These are generally used for enforcing a GIT commit policy.
+</b></details>
+
+<details>
+<summary> What is a repository in GIT? </ary><br><b>
+A:  A repository in GIT is the place in which we store our software work.
+It contains a sub-directory called git.  There is only one git directory in the root of the project.
+GIT stores all the metadata for the repository.  The contents of git directory are of internal use to GIT.
+</b></details>
+
+<details>
+<summary> what is git? </ary><br><b>
+A:  GIT is a mature Distributed Version Control System (DVCS).
+It is used for Source Code Management (SCM).
+It is open source software.  It was developed by Linus Torvalds, the creator of Linux operating system.
+GIT works well with a large number of IDEs (Integrated Development Environments) like- Eclipse, Intelij etc.
+GIT can be used to handle small and large projects.
+</b></details>
+
+<details>
+<summary> What are the main benefits of GIT? </ary><br><b>
+Main benefits of GIT.
+   * Distributed system.
+   * Flexible workflow.
+   * Fast.
+   * Data Integrity.
+   * Free.
+   * Collaboration.
+Distributed System:  GIT is a Distributed Version Control System (DVCS).  So you can keep your private work in version control but completely hidden from others.  You can work offline as well.
+Flexible Workflow:  GIT allows you to create your own workflow.  You can use the process that is suitable for your project.  You can go for centralized or master-slave or any other workflow.
+Fast:  GIT is very fast when compared to other version control systems.
+Data Integrity:  Since GIT uses SHA1, data is not easier to corrupt.
+Free:  It is free for personal use.  So many amateurs use it for their initial projects.  It also works very well with large size project.
+Collaboration:  GIT is very easy to use for projects in which collaboration is required.  Many popular open source software across the globe use GIT.
+</b></details>
+
+<details>
+<summary> What are the disadvantages of GIT?
+A:  Disadvantages of GIT
+   * Binary Files
+   * Steep Learning Curve
+   * Slow remote speed
+Binary Files:  If we have a lot binary files (non-text) in our project, then GIT becomes very slow.  Eg:  Projects with a lot of images or word documents.
+Steep Learning Curve:  It takes some time for a newcomer to learn GIT.  Some of the GIT commands are non-intuitive to a fresher.
+Slow remote speed:  Sometimes the use of remote repositories in slow due to network latency.  Still GIT is better than other VCS in speed.
+GIT COMMANDS REFRESHER 2
+We have captured popular GIT Commands for you to refresh your knowledge of GIT version control system.
+Read about these commands to prepare well for GIT interview.  Test yourself on which GIT commands you already know about.
+git add
+This command is used to add any file changes in working directory to the index.
+Eg.git add .
+git rm
+This command is used to remove files from our index and our local working directory.  Then these files will not be tracked.
+Eg. git rm filename
+git commit
+We use this command to take all the changes done on the index, to create a new commit object pointing to it and to set the branch to point to the new commit.
+Eg.
+git commit -m ‘My changes’ 
+git commit -a -m ‘My changes for git add and git commit’
+</b></details>
+
+<details>
+<summary> 13)  What are the main differences between GIT and SVN? </ary><br><b>
+ GIT Vs. SVN
+   * Decentalized.
+   * Complex to learn.
+   * Unable to handle Binary files.
+   * Internal directory.
+   * User Interface.
+Decentralized:  GIT is decentralized.  You have a local copy that is a repository in which you can commit.  In SVN you have to always connect to a central repository for check-in.
+Complex to learn:  GIT is a bit difficult to learn for some developers.  It has more concepts and commands to learn.  SVN is much easier to learn.
+Unable to handle Binary files :  GIT becomes slow it deals with large binary files that change frequently.  SVN can handle large binary files easily.
+Internal directory:  GIT creates only .git directory.  SVN creates .svn directory in each folder.
+User Interface:  GIT does not have good UT, but SVN has good user interfaces.
+</b></details>
+
+<details>
+<summary>14)  How will you start GIT for your project? </ary><br><b>
+A:  Start GIT for your project
+We use git init command in an existing project directory to start version control for our project.
+After this we can use git add and git commit commands to add files to out GIT repository.
+</b></details>
+
+<details>
+<summary> 15)  What is git clone in GIT? </ary><br><b>
+In GIT, we use git clone command to create a copy of an existing GIT repository in our local.
+This is the most popular way to create a copy of the repository among developers.
+It is similar to svn checkout, but in this case the working copy is a full-fledged repository.
+</b></details>
+
+<details>
+<summary> 16)  How will you create a repository in GIT? </ary><br><b>
+To create a new repository in GIT, first we create a directory for the project.
+Then we run ‘git init’ command.
+</b></details>
+
+
+
+
 
 
 
