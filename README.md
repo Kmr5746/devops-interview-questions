@@ -60,36 +60,20 @@
 <!-- prettier-ignore-end -->
 <!-- ALL-TOPICS-LIST:END -->
 
-## introduction for interview
-
-<a name="introduction-for-interview"></a>
-
-<details>
-<summary>Hi this is xxxxx I am having around 7 years of experience on technologies like linux and aws cloud computing.
-
-I have around 3 years of exp in AWS and linux 
-In cloud computing worked on services like ec2,s3 vpc, CloudWatch and  cloud formation, ansible, patching activities as a day to day activities, any tickets which comes to my service now bin and request for new Infrastructure server building and new software deployment. If we face any server issues like connecting issues or ping issues I will work on that to resolve and close tickets within the time frame based on SLA we will try to resolve, basically in our projects we work 24*7 on shift basis.
-my day start with taking the shift hand over from previous shift members, understanding pending tickets and working on them, if any build request comes responding to them, in general we get service request and we try to complete them and submit to client and we attend everyday daily team calls with our team and also with client meetings based on requirement.
-
-1. I also prepare inventory reports and service deck and share with client.
-2. Server boot issues,  
-1. Kernal Issue
-I updated my Droplet today to apply all patches to my CentOS 6.4 instance. It installed the latest kernel that came from the REPO and it removed the other kernels on the system. 
-Now that I no longer have Internet access I am unable to reinstall the kernel versions that I need to have there in order for the system to boot
-it told me “failed to bring up eth0.” I grepped around in the dmesg output, and found this line of interest:
-Edited /etc/network/interfaces and changed eth0 to ens3 and viola!, ifup ens3
-Step 1: Change to the location of the virtio_net.ko module
-# cd /lib/modules/2.6.32-358.11.1.el6.x86_64/kernel/drivers/net/
-Step 2: Strip the public key information from the file using the "objcopy" utility.
-# objcopy -R .note.module.sig virtio_net.ko vnet.ko
-Step 3: Load your stripped version of the driver into the kernel and (voila)
-# insmod vnet.ko
-</b></details>
-
 ##devops
 
 <a name="devops-beginner"></a>
 #### :baby: Beginner
+
+<details>
+<summary> Q)Tell me about your self?</summary><br><b>
+Hi this is xxxxx I am having around 7 years of experience on technologies like linux and aws cloud computing.
+
+I have around 3 years of exp in AWS and linux 
+
+In cloud computing worked on services like ec2,s3 vpc, CloudWatch and  cloud formation, ansible, patching activities as a day to day activities, any tickets which comes to my service now bin and request for new Infrastructure server building and new software deployment. If we face any server issues like connecting issues or ping issues I will work on that to resolve and close tickets within the time frame based on SLA we will try to resolve, basically in our projects we work 24*7 on shift basis.
+my day start with taking the shift hand over from previous shift members, understanding pending tickets and working on them, if any build request comes responding to them, in general we get service request and we try to complete them and submit to client and we attend everyday daily team calls with our team and also with client meetings based on requirement.
+</b></details>
 
 <details>
 <summary>What is DevOps?</summary><br><b>
