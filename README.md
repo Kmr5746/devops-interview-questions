@@ -4511,7 +4511,7 @@ Tomcat started off as a servlet reference implementation by James Duncan Davidso
 </b></details>
 
 <details>
-<summary>Name some Tomcat features?
+<summary>Name some Tomcat features?</summary><br><b>
 Tomcat 7.x implements the Servlet 3.0 and JSP 2.2 specifications. It requires Java version 1.6. Tomcat 8.x implements the Servlet 3.1 and JSP 2.4 Specifications. Tomcat 8.5.x is intended to replace 8.0.x and includes new features pulled forward from Tomcat 9.0.x. Tomcat 8.5 is designed to run on Java SE 7 and later.
 </b></details>
 
