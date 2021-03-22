@@ -4480,3 +4480,373 @@ Below you can find several scenario questions:
 * [Cloud Slack bot](scenarios/cloud_slack_bot.md)
 * [Writing Jenkins Scripts](scenarios/jenkins_scripts.md)
 * [Writing Jenkins Pipelines](scenarios/jenkins_pipelines.md)
+
+
+## Tomcat
+
+<a name="tomcat beginner"></a>
+
+<details>
+<summary>1. What is Tomcat?</summary><br><b>
+Tomcat is a Java Servlet container and web server from the Apache software foundation. It can be used as standalone or it can be used behind traditional web servers such as Apache httpd.
+Recent versions of Tomcat can serve static content as fast as httpd. A web server uses the request/response message exchange pattern to serve web pages. Tomcat provides Servlet, JSP technologies and static content as well.
+</b></details>
+
+<details>
+<summary>what is Apache Tomcat?</summary><br><b>
+Apache Tomcat is an open-source web server and Servlet/JSP container developed by the Apache Software Foundation. Tomcat implements several Java EE specifications including Java Servlet, Java Server Pages (JSP), Java EL, and WebSocket, and provides a "pure Java" HTTP web server environment for Java code to run in.
+</b></details>
+
+<details>
+<summary>Who is responsible of Tomcat?</summary><br><b>
+The Apache Software Foundation. The Apache Software Foundation is an umbrella organization that looks after a number of Open Source projects.
+Jakarta is the group name for the Java based projects of the Apache Software foundation.
+Tomcat is a Web Server that handles server side Java (in the form of Servlets and JSPs), and it’s a part of the Apache Jakarta project group. Tomcat is the “reference” implementation of the Servlet and JSP standards – in other words, if it runs under Tomcat, it should run under any compliant Servlet / JSP container.
+</b></details>
+
+<details>
+<summary> What do you know about Tomcat history?</summary><br><b>
+Tomcat started off as a servlet reference implementation by James Duncan Davidson, a software architect at Sun Microsystems. He later helped make the project open source and played a key role in its donation by Sun Microsystems to the Apache Software Foundation. The Apache Ant software build automation tool was developed as a side-effect of the creation of Tomcat as an open source project.
+</b></details>
+
+<details>
+<summary>Name some Tomcat features?
+Tomcat 7.x implements the Servlet 3.0 and JSP 2.2 specifications. It requires Java version 1.6. Tomcat 8.x implements the Servlet 3.1 and JSP 2.4 Specifications. Tomcat 8.5.x is intended to replace 8.0.x and includes new features pulled forward from Tomcat 9.0.x. Tomcat 8.5 is designed to run on Java SE 7 and later.
+</b></details>
+
+<details>
+<summary> Explain Directory Structure Of Tomcat?</summary><br><b>
+Directory structure of Tomcat are:
+bin - contain startup, shutdown, and other scripts (*.sh for UNIX and *.bat for Windows systems) and some jar files also there.
+conf - Server configuration files (including server.xml) and related DTDs. The most important file in here is server.xml. It is the main configuration file for the container.
+lib - contains JARs those are used by container and Servlet and JSP application programming interfaces (APIs).
+logs - Log and output files.
+webapps – deployed web applications reside in it .
+work - Temporary working directories for web applications and mostly used during in JSP compilation where JSP is converted to a Java servlet.
+temp - Directory used by the JVM for temporary files .
+</b></details>
+
+<details>
+<summary>What is the Tomcat default port?</summary><br><b>
+The default port for Tomcat is 8080. You can change the default port by editing the file server.xml under the conf folder in the Tomcat installed directory. Change the property Connector port=”8080″ to the desired port and restart Tomcat so the changes can take effect.
+</b></details>
+
+<details>
+<summary> How to deploy War web applications in Tomcat?</summary><br><b>
+You can drop the WAR file inside the webapps folder or use the Tomcat manager to deploy War files.
+</b></details>
+
+<details>
+<summary> Can Tomcat use SSL?</summary><br><b>
+Yes, you need to make additional configurations to make Tomcat use SSL. In resume you need to do these tasks
+Generate Keystore
+Add a conector in server.xml
+Restart Tomcat
+</b></details>
+
+<details>
+<summary> How do I override the default home page loaded by Tomcat?</summary><br><b>
+Inside $TOMCAT_HOME/conf/web.xml there is a section called <welcome-file-list> and it looks like this:
+welcome-file-list
+1
+	<welcome-file-list>
+	2
+	    <welcome-file>index.html</welcome-file>
+	
+
+3
+	    <welcome-file>index.htm</welcome-file>
+	4
+	    <welcome-file>index.jsp</welcome-file>
+	
+
+5
+	</welcome-file-list>
+	The default servlet attempts to load the index.* files in the order listed. You may easily override the index.jsp file by creating an index.html file at $TOMCAT_HOME/webapps/ROOT.
+</b></details>
+
+
+<details>
+<summary>What services are provided by Tomcat?</summary><br><b>
+Tomcat server provides a host of services which are not provided by normal web servers like Apache Web Server. Those are:
+Servlet Life cycle
+Handle Web Requests
+Database connection pooling
+Clustering
+High availability
+</b></details>
+
+<details>
+<summary>Explain How Running Tomcat As A Windows Service Provides Benefits?</summary><br><b>
+Running Tomcat as a windows service provides benefits like:
+Automatic startup: It is crucial for environment where you may want to remotely re-start a system after maintenance
+Server startup without active user login: Tomcat is run oftenly on blade servers that may not even have an active monitor attached to them. Windows services can be started without an active user
+Security: Tomcat under window service enables you to run it under a special system account, which is protected from the rest of the user accounts
+</b></details>
+
+
+<details>
+<summary>Explain what is Tomcat Valve?</summary><br><b>
+A tomcat valve- a new technology is introduced with Tomcat 4 which enables you to link an instance of a Java class with a specific Catalina container.
+</b></details>
+
+<details>
+<summary> Mention with how many valves does Tomcat configured with?</summary><br><b>
+Four types of valves Tomcat is configured with
+Access Log
+Remote Address Filter
+Remote Host Filter
+Request Dumper
+</b></details>
+
+<details>
+<summary>Explain how servlet life cycles?</summary><br><b>
+The life-cycle of a typical servlet running on Tomcat
+Tom-cat receives a request from a client through one of its connectors
+For processing, this request Tomcat maps this request to appropriate
+Once the request has been directed to the appropriate servlet, Tomcat verifies that servlet class has been loaded. If it is not than Tomcat wraps the servlet into Java Bytecode, that is executable by the JVM and forms an instance of the servlet
+Tomcat initiates the servlet by calling its init The servlet contains code that is able to screen Tomcat configuration files and act accordingly, as well as declare any resources it might require
+Once the servlet has been started, Tomcat can call the servlet’s service method to proceed the request
+Tomcat and the servlet can co-ordinate or communicate through the use of listener classes during the servlet’s lifecycle, which tracks the servlet for a variety of state changes.
+To remove the servlet, Tomcat calls the servlets destroy method.
+</b></details>
+
+<details>
+<summary>Explain what is the purpose of NAT protocol?</summary><br><b>
+The purpose of NAT protocol is to hide private IP address from public IP address and give a certain level of security to the organization.
+</b></details>
+
+<details>
+<summary> What is a servlet container?</summary><br><b>
+he servlet container is the component of a web server that interacts with Java servlets. The servlet container is responsible for managing the lifecycle of servlets, mapping a URL to a particular servlet and ensuring that the URL requester has the correct access-rights.
+The servlet container handles requests to servlets, JavaServer Pages (JSP) files, and other types of files that include server-side code. The Web container creates servlet instances, loads and unloads servlets, creates and manages request and response objects, and performs other servlet-management tasks.
+The servlet container implements the web component contract of the Java EE architecture, specifying a runtime environment for web components that includes security, concurrency, lifecycle management, transaction, deployment, and other services.
+A servlet life cycle can be defined as the entire process from its creation till the destruction.
+Life cycle steps followed by a servlet
+The servlet receives a request from a client through one of its connectors then is initialized by calling the init() method.
+The servlet calls service() method to process a client’s request and send the response.
+The servlet is terminated by calling the destroy() method.
+The servlet is garbage collected by the garbage collector of the JVM.
+</b></details>
+
+<details>
+<summary> What is the server server.xml configuration file?</summary><br><b>
+The server.xml file is Tomcat main configuration file, and it is responsible for specifying Tomcat configuration on startup.
+</b></details>
+
+<details>
+<summary>What is web.xml configuration file?</summary><br><b>
+The web.xml file is derived from the Servlet specification, and contains information used to deploy and configure the components of your web applications.
+</b></details>
+
+<details>
+<summary>What is Tomcat-users.xml configuration file?</summary><br><b>
+It is where the Tomcat users are defined and it is located in the conf folder of the Tomcat server root.
+</b></details>
+
+<details>
+<summary> Where do you configure a database connection pool in Tomcat server?</summary><br><b>
+The Configure pool is in the context.xml inside the conf folder of tomcat.
+</b></details>
+
+<details>
+<summary> What is a connector and why it is used in Tomcat?</summary><br><b>
+The Apache Tomcat Connectors project is a part of the Tomcat project and provides web server plug-ins to connect web servers with Tomcat and other back-ends.
+The supported web servers are:
+The Apache HTTP Server with a plugin named mod_jk.
+Microsoft IIS with a plugin named ISAPI redirector.
+The iPlanet Web Server with a plugin named NSAPI redirector.
+In Tomcat, two types of connectors are used
+HTTP Connectors: It has many attributes that can be changed to determine exactly how it works and access functions such as redirects and proxy forwarding
+AJP Connectors: It works in the same manner as HTTP connectors, but they practice the AJP protocol in place of HTTP. AJP connectors are commonly implemented in Tomcat through the plug-in technology mod_jk.
+</b></details>
+
+<details>
+<summary> What is the difference between Tomcat and an Application server?</summary><br><b>
+Tomcat is a servlet container that supports servlets and the JSP technology. An Application server supports many other Java EE technologies.
+</b></details>
+
+<details>
+<summary>What Application server is based on Tomcat ?</summary><br><b>
+TomEE.
+</b></details>
+
+24.What is TomEE?</summary><br><b>
+Apache TomEE (pronounced “Tommy”) is the Java Enterprise Edition of Apache Tomcat (Tomcat + Java EE = TomEE) that combines several Java enterprise projects including Apache OpenEJB, Apache OpenWebBeans, Apache OpenJPA, Apache MyFaces and others.
+</b></details>
+
+<details>
+<summary>What is Jasper?</summary><br><b>
+Jasper is Tomcat’s JSP Engine. Jasper parses JSP files to compile them into Java code as servlets. At runtime, Jasper detects changes to JSP files and recompiles them. Jasper is the Java Server pages handler in Tomcat; internally, it deals with any compiling that’s neccessary, and converts JSPs into Servlets for Catalina to handle.
+</b></details>
+
+<details>
+<summary>What is Catalina ?</summary><br><b>
+Catalina is Tomcat’s servlet container. Catalina implements specifications for servlet and JavaServer Pages. Catalina is the Java Engine (JRE / JVM) that’s built into Tomcat and provides an environment in which Servlets can be run.
+Catalina consists of configuration files are
+policy
+properties
+properties
+xml
+xml
+Tomcat-users.xml
+Xml
+</b></details>
+
+<details>
+<summary> What is Coyote ?</summary><br><b>
+Coyote is a Connector component for Tomcat that supports the HTTP 1.1 protocol as a web server. This allows Catalina, nominally a Java Servlet or JSP container, to also act as a plain web server that serves local files as HTTP documents.
+Coyote listens for incoming connections to the server on a specific TCP port and forwards the request to the Tomcat Engine to process the request and send back a response to the requesting client.
+Coyote is the HTTP connector that’s built into Tomcat and provides Tomcat with an interface that browsers can connect to.
+</b></details>
+
+<details>
+<summary>What is a Tomcat cluster ?</summary><br><b>
+This component is used to manage large applications. It is used for load balancing and can be achieved through many techniques. Apache Tomcat cluster is used to manage more traffic. It provides multiples instances of the Tomcat server with its content balanced between these instances.
+</b></details>
+
+<details>
+<summary>What is a Tomcat High availability ?</summary><br><b>
+A high-availability feature has been added to facilitate the scheduling of system upgrades without affecting the live environment. This is done by dispatching live traffic requests to a temporary server on a different port while the main server is upgraded on the main port. It is very useful in handling user requests on high-traffic web applications.
+</b></details>
+
+<details>
+<summary>What is the server?</summary><br><b>
+A Server element represents the entire Catalina servlet container. Therefore, it must be the single outermost element in the conf/server.xml configuration file. Its attributes represent the characteristics of the servlet container as a whole.
+</b></details>
+
+<details>
+<summary> What is the Service?</summary><br><b>
+A Service element represents the combination of one or more Connector components that share a single Engine component for processing incoming requests. One or more Service elements may be nested inside a Server element.
+</b></details>
+
+<details>
+<summary> What is the engine ?</summary><br><b>
+The Engine element represents the entire request processing machinery associated with a particular Catalina Service. It receives and processes all requests from one or more Connectors, and returns the completed response to the Connector for ultimate transmission back to the client.
+Exactly one Engine element MUST be nested inside a Service element, following all of the corresponding Connector elements associated with this Service.
+</b></details>
+
+<details>
+<summary>What is the host ?</summary><br><b>
+The Host element represents a virtual host, which is an association of a network name for a server.
+</b></details>
+
+<details>
+<summary>What is the Connector ?</summary><br><b>
+A Connector represents an end point in which requests are received.
+</b></details>
+
+<details>
+<summary>What is the Context ?</summary><br><b>
+The Context element represents a web application, which is run within a particular virtual host. Each web application is based on a Web Application Archive (WAR) file, or a corresponding directory containing the corresponding unpacked contents, as described in the Servlet Specification.
+</b></details>
+
+<details>
+<summary>what is a difference between Apache and Nginx web server?</summary><br><b>
+Both are categorized as a Web Server and here are some of the main differences.
+Nginx is event-based web server where Apache is process based
+Nginx is known for better performance than Apache
+Apache supports wide range of OS where Nginx doesn’t support OpenVMS and IBMi
+Apache has large number of modules integration with backend application server where Nginx is still catching up
+Nginx is lightweight and capturing the market share rapidly. If you are new to Nginx, then you may be interested in checking out my articles on Nginx.
+</b></details>
+
+<details>
+<summary>How to disable trace HTTP request?</summary><br><b>
+Add the following in httpd.conf file and restart the instance
+TraceEnable off
+</b></details>
+
+<details>
+<summary>What are the HTTP error codes?</summary><br><b>
+Informational – 1XX
+Success – 2XX
+Redirection – 3XX
+Client Error – 4XX
+Server Error – 5XX
+Success Response
+200 – OK: The standard HTTP response for successful HTTP requests. In another way, the web server will return 200 when requested content is served successfully.
+202 – Accepted: The server has accepted your request and yet to process them.
+206 – Partial Content: Only partial content is delivered due to the range header sent by a client like wget.
+Redirection Response
+301 – Moved permanently: Your requested page has been moved permanently to a new location. This instructs search engine bot to crawl new location.
+302 – Moved temporarily: Your requested is served from a different location but that is temporary arrangement. This instructs search engine bot to crawl the original location.
+305 – Use proxy: The requested resource is only available through a proxy. That means you must use a relevant proxy to get the requested page successfully.
+304 – Not modified: Usually when cached page is served when a resource has not been modified.
+Client Error
+400 – Bad request: The server is confused what you have requested. Probably bad syntax or trying to include characters in URI which server doesn’t understand.
+401 – Not authorised: The requested page is protected and requires authentication. You must login in order to get the requested page successfully.
+403 – Forbidden: You have to try to access which you don’t have permission. This, not necessary resource is protected by the password; it could also be when files/folder permission doesn’t allow viewing the requested page.
+404 – Not found: Probably the most famous one – your requested page is not found on the server. You are trying to access something, which doesn’t exist.
+405 – Method not allowed: You are requesting a page with the wrong method. For example, you are doing GET on POST data. Or you are trying the method, which is disabled for example – TRACE, PUT, DELETE.
+408 – Request timeout: The server timed out waiting for the request
+411 – Length required: Your request doesn’t meet the length of its content, which is required by the requested resource.
+Server Error
+500 – Internal server error: A very generic error when server encountered an error due to various reasons. Logs must be examined to see why the server has responded internal error.
+502 – Bad gateway: The server was acting as a gateway or proxy and received an invalid response from the upstream server like Tomcat, WebSphere.
+503 – Service unavailable: The server can’t serve your request. This could be due to either server is too busy in other stuff or almost dead.
+</b></details>
+
+<details>
+<summary>How can Apache act a Proxy Server?</summary><br><b>
+You can use a mod_proxy module to use as a proxy server. The mod_proxy module can be used to connect to the backend server like Tomcat, WebLogic, WebSphere, etc.
+</b></details>
+
+<details>
+<summary>What’s a difference between Apache Web Server and Apache Tomcat?</summary><br><b>
+Apache Web is HTTP server to serve static contents where Tomcat is servlet container to deploy JSP files.
+You can always integrate Apache HTTP with Tomcat, however, based on the requirement you need to choose either one. If you need proper web server, then Apache HTTP else Tomcat for JSP-Servlet Container.
+</b></details>
+
+
+<details>
+<summary>Where can be set roles,username and password?</summary><br><b>
+/conf/tomcat-users.xml
+</b></details>
+
+<details>
+<summary>What Is Default Session Time Out In Tomcat?</summary><br><b>
+The default session timeout 30 minutes in tomcat and can change in $TOMCAT_HOME/conf/web.xml via modify below entry.
+</b></details>
+
+<details>
+<summary>What are the configuratiopn file in tomcat server?</summary><br><b>
+Tomacat XML Configuration Files:
+server.xml(TOMCAT-HOME/conf/server.xml)
+web.xml (TOMCAT-HOME/conf/web.xml)
+tomcat-users.xml (TOMCAT-HOME/conf/tomcat-users.xml)
+</b></details>
+
+<details>
+<summary> How to start and shutdown to tomcat server?</summary><br><b>
+Tomacat XML Configuration Files:
+There are two .sh file in cd $CATALINA_HOME/bin dir or in /usr/share/tomcat7/bin/
+./startup.sh
+./shutdown.sh
+</b></details>
+
+<details>
+<summary> What are the HTTP requests?</summary><br><b>
+GET: The GET method is used to retrieve information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+
+
+HEAD: Same as GET, but it transfers the status line and the header section only.
+
+
+POST: A POST request is used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+
+
+PUT: Replaces all the current representations of the target resource with the uploaded content.
+
+
+DELETE: Removes all the current representations of the target resource given by URI.
+
+
+CONNECT: Establishes a tunnel to the server identified by a given URI.
+
+
+OPTIONS: Describe the communication options for the target resource.
+
+
+TRACE: Performs a message loop back test along with the path to the target resource.
+</b></details>
