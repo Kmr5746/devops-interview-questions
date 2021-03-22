@@ -3356,7 +3356,8 @@ Post-receive hook is invoked after the updates have been done and accepted by a 
 <summary> Do we have to store scripts for GIT hooks within same repository?</ary><br><b>
 A:  Store scripts for GIT hooks
 A hook is local to a GIT repository.  But the script attached to a hook can be created either inside the hooks directory or it can be stored in a separate repository.  But we have to link the script to a hook in our local repository.
-In this way we can maintain versions of a script in a separate repository, but use them in our repository where hooks are stored.
+In this way we can maintain versions of a script in a separate repository, but use them in our repository where hooks are stored.[Tomcat interview questions.docx.txt](https://github.com/raghuk134/devops-interview-questions/files/6179923/Tomcat.interview.questions.docx.txt)
+
 Also when we store scripts in a separate common repository,  we can reuse same scripts for different purposes in multiple repositories.
 </b></details>
 
