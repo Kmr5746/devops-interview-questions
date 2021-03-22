@@ -1676,6 +1676,94 @@ List
 
 <details>
 <summary>What is Docker? What are you using it for?</summary><br><b>
+Docker is a containerization platform which packages your application and all its dependencies together in the form of containers so as to ensure that your application works seamlessly in any environment be it development or test or production.
+
+* Docker containers, wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries etc. anything that can be installed on a server.
+* This guarantees that the software will always run the same, regardless of its environment.
+</b></details>
+
+<details>
+<summary>What is docker image?</summary><br><b>
+Docker image is the source of Docker container. In other words, Docker images are used to create containers. Images are created with the build command, and they’ll produce a container when started with run. Images are stored in a Docker registry such as registry.hub.docker.com because they can become quite large, images are designed to be composed of layers of other images, allowing a minimal amount of data to be sent when transferring images over the network.
+</b></details>
+
+<details>
+<summary> What is Docker container?</summary><br><b>
+Docker containers include the application and all of its dependencies, but share the kernel with other containers, running as isolated processes in user space on the host operating system. Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. 
+</b></details>
+
+<details>
+<summary>How to create a docker container?</summary><br><b>
+Docker containers are basically runtime instances of Docker images.We can use Docker image to create Docker container by using the below command:
+1
+	docker run -t -i command name
+	This command will create and start a container.
+You should also add, If you want to check the list of all running container with the status on a host use the below command:
+1
+	docker ps -a
+</b></details>
+
+<details>
+<summary>What is Docker hub?</summary><br><b>
+Docker hub is a cloud-based registry service which allows you to link to code repositories, build your images and test them, stores manually pushed images, and links to Docker cloud so you can deploy images to your hosts. It provides a centralized resource for container image discovery, distribution and change management, user and team collaboration, and workflow automation throughout the development pipeline.
+</b></details>
+
+
+<details>
+<summary>How is Docker different from other container technologies?</summary><br><b>
+Docker containers are easy to deploy in a cloud. It can get more applications running on the same hardware than other technologies, it makes it easy for developers to quickly create, ready-to-run containerized applications and it makes managing and deploying applications much easier. You can even share containers with your applications.
+If you have some more points to add you can do that but make sure the above the above explanation is there in your answer.
+</b></details>
+
+<details>
+<summary>What is docker Swarm?</summary><br><b>
+Docker Swarm is native clustering for Docker. It turns a pool of Docker hosts into a single, virtual Docker host. Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
+</b></details>
+
+<details>
+<summary> What is Dockerfile used for?</summary><br><b>
+Docker can build images automatically by reading the instructions from a Dockerfile.
+
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
+Now, the next set of Docker interview questions will test your experience with Docker.
+</b></details>
+
+<details>
+<summary>Can I use json instead of yaml for my compose file in Docker?</summary><br><b>
+You can use json instead of yaml for your compose file, to use json file with compose, specify the filename to use for eg:
+docker-compose -f docker-compose.json up
+</b></details>
+
+<details>
+<summary> How to stop and restart the Docker container??</summary><br><b>
+In order to stop the Docker container you can use the below command:
+1
+	docker stop container ID
+	Now to restart the Docker container you can use:
+1
+	docker restart container ID
+</b></details>
+
+<details>
+<summary> How far do Docker containers scale?</summary><br><b>
+Large web deployments like Google and Twitter, and platform providers such as Heroku and dotCloud all run on container technology, at a scale of hundreds of thousands or even millions of containers running in parallel.
+</b></details>
+
+<details>
+<summary> What platforms does Docker run on?</summary><br><b>
+ * Ubuntu 12.04, 13.04 et al
+   * Fedora 19/20+
+   * RHEL 6.5+
+   * CentOS 6+
+   * Gentoo
+   * ArchLinux
+   * openSUSE 12.3+
+   * CRUX 3.0+
+Cloud:
+   * Amazon EC2
+   * Google Compute Engine
+   * Microsoft Azure
+   * Rackspace
 </b></details>
 
 <details>
@@ -1684,6 +1772,11 @@ List
 The primary difference between containers and VMs is that containers allow you to virtualize
 multiple workloads on the operating system while in the case of VMs the hardware is being virtualized to
 run multiple machines each with its own OS.
+</b></details>
+
+<details>
+<summary> Do I lose my data when the Docker container exits?</summary><br><b>
+no I won’t lose my data when Docker container exits, any data that your application writes to disk gets preserved in its container until you explicitly delete the container. The file system for the container persists even after the container halts.
 </b></details>
 
 <details>
